@@ -1,0 +1,9 @@
+FROM rasa/rasa-sdk:3.6.2
+
+WORKDIR /app
+
+COPY ./actions /app/actions
+
+RUN pip install -r /app/actions/requirements-actions.txt
+
+CMD ["start", "--port", "5055"]
